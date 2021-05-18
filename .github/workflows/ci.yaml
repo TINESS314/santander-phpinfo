@@ -20,7 +20,7 @@ jobs:
       - name: build
         run: docker build --file ${filename} --no-cache --tag ${registry}/${user}/${project}:${tagname} .
       - name: run
-        run: docker run --detach --name santander-phpinfo ${registry}/${user}/${project}:${tagname}
+        run: docker run --detach --name ${project} ${registry}/${user}/${project}:${tagname}
       - name: test
         run: while true ; do sleep ${sleep} ; docker logs ${project} 2>& 1 | grep ${pattern} && break ; done
       - name: top
