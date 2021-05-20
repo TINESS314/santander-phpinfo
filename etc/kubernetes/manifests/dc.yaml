@@ -1,0 +1,45 @@
+apiVersion: v1
+kind: DeploymentConfig
+metadata:
+  selfLink:
+  resourceVersion:
+  uid:
+  creationTimestamp:
+  managedFields: []
+  name: dc-latest
+  namespace:
+spec:
+  replicas: 2
+  selector:
+    app: santander-phpinfo
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: santander-phpinfo
+    spec:
+      containers:
+        - name: php
+          image: 'index.docker.io/ssanchezmingo/santander-phpinfo:latest'
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+          env:
+            - name: nombre_alumno
+              value: santos
+          resources:
+            limits:
+              cpu: 20m
+              memory: 20M
+            requests:
+              cpu: 20m
+              memory: 20M
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: {}
+      schedulerName: default-scheduler
+status: {}
