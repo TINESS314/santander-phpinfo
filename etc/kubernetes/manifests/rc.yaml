@@ -6,7 +6,7 @@ metadata:
   uid:
   creationTimestamp:
   managedFields: []
-  name: rc
+  name: rc-latest
   namespace:
 spec:
   replicas: 2
