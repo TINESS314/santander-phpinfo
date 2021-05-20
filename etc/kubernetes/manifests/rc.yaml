@@ -6,7 +6,7 @@ metadata:
   uid:
   creationTimestamp:
   managedFields: []
-  name: rc-latest
+  name: rc-v1.1
   namespace:
 spec:
   replicas: 2
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: php
-          image: 'index.docker.io/ssanchezmingo/santander-phpinfo:latest'
+          image: 'index.docker.io/ssanchezmingo/santander-phpinfo:1.1'
           ports:
             - containerPort: 8080
               protocol: TCP
