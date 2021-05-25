@@ -24,3 +24,5 @@ spec:
           name: santander-phpinfo-dc-container
           ports:
             - containerPort: 8080
+      imagePullSecrets:
+        - name: docker-login
